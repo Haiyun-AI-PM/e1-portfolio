@@ -3,66 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的作品集 | 首页</title>
-  <!-- styles.css：负责页面的长相（颜色、字体、间距、布局） -->
+  <meta name="description" content="Lhy 的个人作品集：一个会用 AI 做产品的 PM，公开 E1→E6 课程成长旅程的过程与交付。" />
+  <title>Lhy · 会用 AI 做产品的 PM｜作品集</title>
+  <!-- E3 首版 V1：按 PROJECT_BRIEF V2 落地——绿色系 / 独立「关于我」/ 纯链接行动点 / 时间线节点带"这关我做了什么" -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- script.js：负责页面的行为（交互、动态内容），defer 保证 DOM 就绪后再执行 -->
   <script src="script.js" defer></script>
 </head>
 <body>
   <!-- 顶部导航：站内锚点跳转 -->
   <header class="site-header">
-    <a class="logo" href="#hero">我的作品集</a>
+    <a class="logo" href="#top">Lhy<span class="logo-hint"> · AI PM</span></a>
     <nav class="site-nav" aria-label="主导航">
       <a href="#about">关于我</a>
-      <a href="#projects">项目</a>
-      <a href="#contact">联系方式</a>
+      <a href="#journey">旅程 E1→E6</a>
+      <a href="#contact">联系</a>
     </nav>
   </header>
 
-  <main>
-    <!-- 首屏：一句话介绍 + 引导按钮 -->
-    <section id="hero" class="hero">
-      <h1>你好，我是 <span class="highlight">[你的名字]</span></h1>
-      <p class="tagline">一个正在学习 Web 开发、用作品说话的学习者。</p>
-      <a class="cta" href="#projects">看看我的项目</a>
-    </section>
-
-    <!-- 关于我：初始页为占位文案，后续关卡补充真实信息 -->
-    <section id="about" class="section">
-      <h2>关于我</h2>
-      <p class="placeholder">这里将写入你的个人介绍：你是谁、在学什么、想做什么。</p>
-    </section>
-
-    <!-- 项目列表：卡片占位，后续关卡填充真实项目 -->
-    <section id="projects" class="section">
-      <h2>项目</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>项目 1</h3>
-          <p class="placeholder">一句话描述这个项目做了什么……</p>
-        </article>
-        <article class="card">
-          <h3>项目 2</h3>
-          <p class="placeholder">一句话描述这个项目做了什么……</p>
-        </article>
-        <article class="card">
-          <h3>项目 3</h3>
-          <p class="placeholder">一句话描述这个项目做了什么……</p>
-        </article>
+  <main id="top">
+    <!-- Hero：一句定位 + 纯链接行动点 -->
+    <section class="hero">
+      <p class="hero-eyebrow">个人作品集 · 公开迭代中</p>
+      <h1>你好，我是 <span class="hl">Lhy</span></h1>
+      <p class="hero-line">一个<strong>会用 AI 做产品</strong>的产品经理。</p>
+      <p class="hero-sub">不空谈方法论——我把 EduSeed「经验作品集」E1→E6 的每一步（AI 日志 · 拿来说明 · AAR）都做成下面这条时间线，真实可查。</p>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="#journey">进入旅程 ↓</a>
+        <a class="btn btn-ghost" href="https://github.com/Haiyun-AI-PM/e1-portfolio" target="_blank" rel="noopener">GitHub 仓库 ↗</a>
       </div>
     </section>
 
-    <!-- 联系方式：占位邮箱与主页，后续替换为真实信息 -->
+    <!-- 关于我：独立板块（Brief V2 拍板：不并入 hero） -->
+    <section id="about" class="section">
+      <h2>关于我</h2>
+      <p class="lead"><strong>会用 AI 做产品</strong>——用提示词、脚手架与评审闭环，把想法变成可运行、可验收、可复用的东西。</p>
+      <ul class="about-list">
+        <li>身份：产品经理视角，先定义再动手，每个决定写成可验收条目（六要素 Brief 见 E2 节点）。</li>
+        <li>正在做：在 E1→E6 课程旅程中公开迭代这份作品集，过程材料与代码全部开源在 GitHub。</li>
+        <li>原则：只呈现真实进度与真实数字；"进行中"就标"进行中"，不虚构经历与分数。</li>
+      </ul>
+      <p class="about-links">主阵地：<a href="https://github.com/Haiyun-AI-PM" target="_blank" rel="noopener">github.com/Haiyun-AI-PM ↗</a></p>
+    </section>
+
+    <!-- 旅程时间线：E1→E6 纵向时间轴 -->
+    <section id="journey" class="section">
+      <h2>我的旅程 · E1 → E6</h2>
+      <p class="section-intro">已完成 = 绿色实心，进行中 = 绿色描边（呼吸），未开始 = 灰色。点开每一关看<strong>这关我做了什么</strong>与交付证据。</p>
+      <div class="timeline">
+
+        <details class="tl-item done" open>
+          <summary>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-code">E1</span>
+            <span class="tl-name">创建项目</span>
+            <span class="tl-state">已完成</span>
+          </summary>
+          <div class="tl-body">
+            <p class="tl-do"><b>这关我做了什么：</b>和 AI 协作生成初始页三件套并跑通预览，完成首次 Git 建仓与规范提交，补齐 AI 日志 / 拿来说明 / AAR 三份过程证据。</p>
+            <ul class="tl-links">
+              <li>交付物：<a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/index.html" target="_blank" rel="noopener">index.html</a> · <a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/styles.css" target="_blank" rel="noopener">styles.css</a> · <a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/script.js" target="_blank" rel="noopener">script.js</a></li>
+              <li>过程材料：<a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/E1_AI%E6%97%A5%E5%BF%97.md" target="_blank" rel="noopener">E1_AI日志</a> · <a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/E1_%E6%8B%BF%E6%9D%A5%E8%AF%B4%E6%98%8E.md" target="_blank" rel="noopener">E1_拿来说明</a> · <a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/E1_AAR%E5%A4%8D%E7%9B%98.md" target="_blank" rel="noopener">E1_AAR复盘</a></li>
+            </ul>
+            <p class="tl-score">AI 初评 <b>86/100</b>（我的自评 R̂=70 → ΔR=+16）</p>
+          </div>
+        </details>
+
+        <details class="tl-item done">
+          <summary>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-code">E2</span>
+            <span class="tl-name">定义作品</span>
+            <span class="tl-state">已完成</span>
+          </summary>
+          <div class="tl-body">
+            <p class="tl-do"><b>这关我做了什么：</b>通过目标受众→内容模块→视觉偏好三轮对话，把"个人品牌向、记住我会用 AI 做产品"收敛成六要素齐全的 Brief；主动提出 4 条修改意见并保留 V1→V2 前后对照。</p>
+            <ul class="tl-links">
+              <li>交付物：<a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/PROJECT_BRIEF.md" target="_blank" rel="noopener">PROJECT_BRIEF.md</a></li>
+              <li>过程材料：<a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/E2_AI%E6%97%A5%E5%BF%97.md" target="_blank" rel="noopener">E2_AI日志</a> · <a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/E2_%E6%8B%BF%E6%9D%A5%E8%AF%B4%E6%98%8E.md" target="_blank" rel="noopener">E2_拿来说明</a> · <a href="https://github.com/Haiyun-AI-PM/e1-portfolio/blob/main/E2_AAR%E5%A4%8D%E7%9B%98.md" target="_blank" rel="noopener">E2_AAR复盘</a></li>
+            </ul>
+            <p class="tl-score">AI 初评 <b>87/100</b>（我的自评 R̂=75 → ΔR=+12）</p>
+          </div>
+        </details>
+
+        <details class="tl-item active" open>
+          <summary>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-code">E3</span>
+            <span class="tl-name">完成首版</span>
+            <span class="tl-state">进行中</span>
+          </summary>
+          <div class="tl-body">
+            <p class="tl-do"><b>这关我做了什么：</b>正在把 Brief V2 的 4 条人工决定翻译成页面：绿色成长渐变、独立「关于我」板块、纯链接行动点、时间线节点带"这关我做了什么"。本页就是 E3 首版 V1，等一轮人工修改意见后定稿。</p>
+            <ul class="tl-links">
+              <li>本关交付物（生成中）：E3_修改记录 · E3_AI日志 · E3_拿来说明 · E3_AAR</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="tl-item todo">
+          <summary>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-code">E4</span>
+            <span class="tl-name">完善作品</span>
+            <span class="tl-state">未开始</span>
+          </summary>
+          <div class="tl-body">
+            <p class="tl-do"><b>这关我打算做什么：</b>补真实内容（个人介绍 / 项目 / 联系方式）、做一个可验证的交互（如按状态筛选 / 主题切换）、检查桌面与移动主要断点，把首版推进到可展示状态。</p>
+          </div>
+        </details>
+
+        <details class="tl-item todo">
+          <summary>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-code">E5</span>
+            <span class="tl-name">检查发布</span>
+            <span class="tl-state">未开始</span>
+          </summary>
+          <div class="tl-body">
+            <p class="tl-do"><b>这关我打算做什么：</b>本地交付物复查 → 在明确确认公开后发布到公开互联网 → 验证 demoUrl 真实可访问且内容正确。</p>
+          </div>
+        </details>
+
+        <details class="tl-item todo">
+          <summary>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-code">E6</span>
+            <span class="tl-name">包装复用</span>
+            <span class="tl-state">未开始</span>
+          </summary>
+          <div class="tl-body">
+            <p class="tl-do"><b>这关我打算做什么：</b>复用前五关的成果做聚合包装：README、桌面 + 移动截图、项目介绍、STAR 简历文案、含真实数字的 AAR/KSTAR 全景复盘。</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- 联系：纯链接行动点（Brief V2 拍板：不做表单） -->
     <section id="contact" class="section">
-      <h2>联系方式</h2>
-      <p>邮箱：<a href="mailto:you@example.com">you@example.com</a></p>
-      <p>GitHub：<a href="https://github.com/your-name" target="_blank" rel="noopener">github.com/your-name</a></p>
+      <h2>联系</h2>
+      <p>想联系或合作？先到 GitHub 看看我的过程与代码——链接就是名片，不留表单。</p>
+      <div class="contact-links">
+        <a href="https://github.com/Haiyun-AI-PM" target="_blank" rel="noopener">GitHub 主页 ↗</a>
+        <a href="https://github.com/Haiyun-AI-PM/e1-portfolio" target="_blank" rel="noopener">当前仓库 ↗</a>
+        <a href="#top">回到顶部 ↑</a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> [你的名字] · 由我自己构建</p>
+    <p>© <span id="year"></span> Lhy · EduSeed 经验作品集 E1→E6 · 公开迭代 · 用 AI 协作构建</p>
   </footer>
 </body>
 </html>
