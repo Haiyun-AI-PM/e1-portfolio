@@ -1,5 +1,7 @@
-/* styles.css — E3 首版 V1：旅程时间线 · 绿色系（PROJECT_BRIEF V2）
-   index.html 管结构、本文件管长相、script.js 管行为 */
+/* styles.css — E4 完善作品：旅程时间线 · 绿色系（PROJECT_BRIEF V2）
+   index.html 管结构、本文件管长相、script.js 管行为。
+   E4 新增：桌面章节侧边导航（≥1180px 双栏）+ details 锚点留白；
+   响应式档位：≤600px 移动单列 / 601–1179px 平板单列 / ≥1180px 桌面侧边栏。 */
 
 :root {
   --bg: #f4f7f3;            /* 浅色纸感底 */
@@ -180,4 +182,56 @@ a { color: var(--green-deep); }
   .timeline::before { left: 14px; }
   .tl-dot { left: 5px; top: 16px; }
   .tl-name { font-size: 15px; }
+}
+
+/* ── E4：桌面章节侧边导航 ────────────────────────────── */
+/* 锚点直达时间线节点时，预留吸顶导航高度 */
+details[id] { scroll-margin-top: 96px; }
+
+/* 默认（<1180px）：单列布局，隐藏侧边目录 */
+.layout { display: block; }
+.side-nav { display: none; }
+
+/* ≥1180px：双栏 —— 左侧粘性章节目录 + 右侧正文 */
+@media (min-width: 1180px) {
+  .layout {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 206px minmax(0, 1fr);
+    gap: 44px;
+    align-items: start;
+  }
+  .side-nav {
+    display: block;
+    position: sticky;
+    top: 88px;
+  }
+  .side-label {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 2px 0 10px;
+  }
+  .side-main { display: grid; gap: 2px; }
+  .side-sub { display: grid; gap: 2px; margin-top: 20px; }
+  .side-nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+  }
+  .side-sub a { font-size: 13px; font-weight: 600; padding: 5px 12px; }
+  .side-nav a:hover { color: var(--green-deep); background: var(--green-soft); }
+  .side-nav a.active {
+    color: var(--green-deep);
+    background: var(--green-soft);
+    border-left-color: var(--green);
+  }
 }
